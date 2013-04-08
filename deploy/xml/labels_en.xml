@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<labels>
+		<label code="whoiam"><![CDATA[Who am I ?]]></label>
+		<label code="defaultNickName"><![CDATA[computer's name...]]></label>
+		<label code="controledBt"><![CDATA[A victim ! <i><font size='9'>(and i love that mmmmhhh)</font></i>]]></label>
+		<label code="controlerBt"><![CDATA[A bastard ! <i><font size='9'>(and he/she'll love that mmmmhhh)</font></i>]]></label>
+		
+		<label code="notification"><![CDATA[<span class='notification-strong'>New victim(s) online :</span><br />{USERS}]]></label>
+		
+		<label code="selectUser"><![CDATA[Select victim]]></label>
+		<label code="waitForPeers"><![CDATA[Waiting for some victims to connect...]]></label>
+		<label code="controlerTitle"><![CDATA[Controler]]></label>
+		
+		<label code="action-blink"><![CDATA[Blink Screen]]></label>
+		<label code="action-scream"><![CDATA[Scream]]></label>
+		<label code="action-blue"><![CDATA[Turn light blue]]></label>
+		<label code="action-glitch"><![CDATA[Glitch]]></label>
+		<label code="action-deadPixels"><![CDATA[Add dead pixels]]></label>
+		<label code="action-file"><![CDATA[Open/Play File]]></label>
+		<label code="action-defaultTrollText"><![CDATA[Write some shit...]]></label>
+		
+		<label code="tt-input"><![CDATA[Write anything or a command.<br /><br />Available commands :<br />/cmd : writes some meaningless shit<br />/url xxx : open a link in the browser<br />/ask : writes "yes or no" to the user<br />/progress : Writes progression percents<br />/clear : erases the things written<br />/reset : Removes the victim mode]]></label>
+		<label code="tt-file"><![CDATA[Displays a subliminal image or plays<br />a video/audio file on a distant screen.<br />Upload can take some time!]]></label>
+	</labels>
+</root>

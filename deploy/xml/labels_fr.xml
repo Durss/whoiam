@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<labels>
+		<label code="whoiam"><![CDATA[Who am I ?]]></label>
+		<label code="defaultNickName"><![CDATA[nom de l'ordinateur...]]></label>
+		<label code="controledBt"><![CDATA[Une victime ! <i><font size='9'>(et j'aime ça mmmmhhh)</font></i>]]></label>
+		<label code="controlerBt"><![CDATA[Un batard ! <i><font size='9'>(et il/elle va aimer ça mmmmhhh)</font></i>]]></label>
+		
+		<label code="notification"><![CDATA[<span class='notification-strong'>Nouvelle(s) victime(s) en ligne :</span><br />{USERS}]]></label>
+		
+		<label code="selectUser"><![CDATA[Choisir une victime]]></label>
+		<label code="waitForPeers"><![CDATA[En attente qu'une victime se connecte...]]></label>
+		<label code="controlerTitle"><![CDATA[Controleur]]></label>
+		
+		<label code="action-blink"><![CDATA[Clignoter]]></label>
+		<label code="action-scream"><![CDATA[Hurler]]></label>
+		<label code="action-blue"><![CDATA[Virer l'écran au bleu]]></label>
+		<label code="action-glitch"><![CDATA[Glitchs]]></label>
+		<label code="action-deadPixels"><![CDATA[Pixels morts]]></label>
+		<label code="action-file"><![CDATA[Ouvrir/jouer fichier]]></label>
+		<label code="action-defaultTrollText"><![CDATA[Ecrire du caca...]]></label>
+		
+		<label code="tt-input"><![CDATA[Ecris une commande ou n'importe quoi.<br /><br />Commandes :<br />/cmd : écrit des trucs chelous<br />/url xxx : ouvre l'url dans le navigateur<br />/ask : écrit "y:yes   n:no"<br />/progress : Affiche une progression<br />/clear : Efface tout<br />/reset : Supprime le mode victime]]></label>
+		<label code="tt-file"><![CDATA[Affiche une image subliminale<br />ou joue un fichier vidéo/son.<br />L'upload peut être long!]]></label>
+	</labels>
+</root>

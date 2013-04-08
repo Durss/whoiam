@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<styleSheets>
+		<styleSheet><![CDATA[{p_resourcesURL}/css/flashstyles.css?v={v_version}]]></styleSheet>
+	</styleSheets>
+
+	<paths>	
+		<path code="baseURL"><![CDATA[]]></path>
+		<path code="resourcesURL"><![CDATA[./]]></path>
+	</paths>
+
+	<vars>
+		<var code="lang"><![CDATA[en]]></var><!-- default lang. Overriden by AS code -->
+		<var code="p2PGroupName"><![CDATA[ahahIFuckedYouHARD]]></var>
+	</vars>
+	
+	<fonts>
+		<font><![CDATA[{p_resourcesURL}/fonts/HelveticaNeueLTStd-Lt.swf?v={v_version}]]></font>
+		<font><![CDATA[{p_resourcesURL}/fonts/HelveticaNeueLTStd-Blk.swf?v={v_version}]]></font>
+		<font><![CDATA[{p_resourcesURL}/fonts/HelveticaNeueLTStd-Cn.swf?v={v_version}]]></font>
+		<font><![CDATA[{p_resourcesURL}/fonts/HelveticaNeueLTStd-Md.swf?v={v_version}]]></font>
+		<font><![CDATA[{p_resourcesURL}/fonts/courier.swf?v={v_version}]]></font>
+	</fonts>
+
+	<labels><![CDATA[{p_resourcesURL}/xml/labels_{v_lang}.xml?v={v_version}]]></labels>
+	
+	<dependencies>
+	</dependencies>
+</root>
