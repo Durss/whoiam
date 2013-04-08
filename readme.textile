@@ -1,3 +1,19 @@
-h1. Assembla.readme
+h1. Details
 
-In assembla you can use "textile(Textile Basics)":http://bit.ly/textile-basics, "html(Html Basics)":http://bit.ly/html-basics or "markdown(Markdown Basics)":http://bit.ly/markdown-basics to add some sugar to your readme files. Just add the extention to your readme file, so we can recognize the markup you want to use!
+This AIR application is aimed to troll your workmates by sending shits distantly to their computer.
+Get more details about this app here :
+https://dl.dropbox.com/u/20758492/flash/whoiam/index.html
+
+
+h1. TODO/TOFIX and WWBC (what would be cool)
+
+Fix SWF playing bug.
+Fix full screen that is broken when reseting the app via /reset
+Find a way to hide the app from the dock on MAC. "nativeWindow.visible = false" doesn't work... (apparently an AIR bug)
+Add bundled application for windows and MAC to be able to install it without admin rights.
+Add webcam snapshots and livestream.
+Add mic streams.
+Enhance android app.
+Add online mode via Cirrus servers with groups configuration to control someone from an other network.
+Add mouse/keyboard control via native extensions.
+Add application launch.
