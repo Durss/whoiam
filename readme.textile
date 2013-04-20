@@ -16,4 +16,4 @@ Add mic streams.
 Enhance android app.
 Add online mode via Cirrus servers with groups configuration to control someone from an other network.
 Add mouse/keyboard control via native extensions.
-Add application launch.
+Add possibility to launch applications (notepad, paint, etc...).
