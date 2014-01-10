@@ -202,6 +202,7 @@ package com.whoiam.p2p {
 		 */
 		private function clientUpdateHandler(event:ClientEvent):void {
 			var id:String = event.client.groupID;
+			if(event.client == null || /^CONTROLER_.*/.test(event.client.clientName) ) return;
 			dispatchEvent(new ConnectionManagerEvent(ConnectionManagerEvent.ON_USER_UPDATE, null, event.client, id));
 		}
 		

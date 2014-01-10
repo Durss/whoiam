@@ -118,7 +118,6 @@ package com.whoiam.views {
 		 */
 		private function userConnectHandler(event:ConnectionManagerEvent):void {
 			var vo:ClientVO = event.data as ClientVO;
-			if(vo == null || /^CONTROLER_.*/.test(vo.clientName) ) return;
 			
 			clearTimeout(_timeout);
 			_usersJustConnected.push(vo);

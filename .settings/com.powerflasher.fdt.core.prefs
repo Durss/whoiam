@@ -1,4 +1,4 @@
-#Tue Feb 26 15:36:29 CET 2013
+#Fri Jan 10 15:27:33 CET 2014
 com.powerflasher.fdt.core.CompatiblePlayers=AIR_Debug_Launcher
 com.powerflasher.fdt.core.CompilerArguments=-static-link-runtime-shared-libraries\=true\n-target-player\={playerVersion}\n-library-path+\="{flexSDK}/frameworks/locale/en_US"\n-default-size\=550,400
 com.powerflasher.fdt.core.DefaultOutputFolder=deploy
@@ -37,7 +37,7 @@ com.powerflasher.fdt.core.mobile.Android.ACTIVE=true
 com.powerflasher.fdt.core.mobile.Android.AVAILABLE.EXTENSIONS=
 com.powerflasher.fdt.core.mobile.Android.CUSTOM.ADT.CMD.LINE=${package} ${target} ${connection} ${market} ${signing} ${provision} ${output} ${content} ${icons} ${platformsdk}
 com.powerflasher.fdt.core.mobile.Android.CUSTOMIZE.ADT.ARGS=false
-com.powerflasher.fdt.core.mobile.Android.DEPLOY.EXPORT.CAPTIVE=false
+com.powerflasher.fdt.core.mobile.Android.DEPLOY.EXPORT.CAPTIVE=true
 com.powerflasher.fdt.core.mobile.Android.DEPLOY.INSTALL.CHECK=false
 com.powerflasher.fdt.core.mobile.Android.DEPLOY.LOCATION=deploy/Whoiam.apk
 com.powerflasher.fdt.core.mobile.Android.DEPLOY.MARKET.INDEX=0
