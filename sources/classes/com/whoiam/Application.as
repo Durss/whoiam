@@ -1,16 +1,16 @@
 ﻿package com.whoiam {
 	import gs.plugins.RemoveChildPlugin;
 	import gs.plugins.TweenPlugin;
-	import com.whoiam.views.NotificationView;
+
 	import com.nurun.structure.mvc.model.events.ModelEvent;
 	import com.nurun.structure.mvc.views.ViewLocator;
 	import com.whoiam.controler.FrontControler;
 	import com.whoiam.model.Model;
 	import com.whoiam.views.ControledView;
 	import com.whoiam.views.ControlerView;
+	import com.whoiam.views.NotificationView;
 	import com.whoiam.views.StartView;
 
-	import flash.desktop.NativeApplication;
 	import flash.display.MovieClip;
 	import flash.display.NativeWindow;
 	import flash.display.NativeWindowInitOptions;
@@ -106,31 +106,23 @@
 			_window.stage.addChild(_holder);
 //			_window.stage.addEventListener(Event.ENTER_FRAME, mouseMoveHandler);
 			
-			//Forces app to launch at startup
-			try {
-				if (NativeApplication.supportsStartAtLogin) {
-					NativeApplication.nativeApplication.startAtLogin = true;
-				}
-			}catch(error:Error) {
-				//Doesn't work in ADL
-			}
-			
 			model.start();
 		}
 
 		private function modelUpdateHandler(event:ModelEvent):void {
 			return;
+			
+			//The following provides a way to get the mouse reacting depending on what's behind the app
+			//by creating a "hole" in the application's rendering at the mouse's position.
+			//But it doesn't work well as mouse move is only catched when mouse comes over the layer.
+			//So the hole is updated only when mouse goes out of it. This makes the mouse's state
+			//blinking when moving it.
 			var model:Model = event.model as Model;
-			if(model.controledMode
-			
-			&& false //REMOVE THIS TO ENABLE CONTENT MASK! This provides a way to get the mouse reacting depending on the bakcground apps by creating a "hole" in the application's rendering at the mouse's position.
-			
-			) {
+			if(model.controledMode) {
 				_mask = addChild(new Shape()) as Shape;
 				_holder.mask = _mask;
 				_window.stage.addChild(_mask);
 				_window.stage.addEventListener(MouseEvent.MOUSE_MOVE, mouseMoveHandler);
-				_window.alwaysInFront = true;
 				model.removeEventListener(ModelEvent.UPDATE, modelUpdateHandler);
 				mouseMoveHandler();
 			}

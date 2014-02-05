@@ -80,6 +80,7 @@ package com.whoiam.views {
 				_ready = true;
 				initialize();
 			}
+			if(visible) computePositions();
 		}
 
 
@@ -166,6 +167,7 @@ package com.whoiam.views {
 			if(event.target != _controledBt && event.target != _controlerBt) return;
 			
 			changeValueHandler();
+			//If button is disabled but clicked, give focus to input
 			if(!_controledBt.enabled && _controledBt.hitTestPoint(stage.mouseX, stage.mouseY, true)) {
 				stage.focus = _nameInput;
 				return;

@@ -1,16 +1,17 @@
 ﻿package com.whoiam.model {
-	import flash.utils.ByteArray;
 	import com.nurun.core.commands.events.CommandEvent;
-	import com.nurun.utils.commands.BrowseForFileCmd;
-	import com.whoiam.vo.ActionType;
 	import com.nurun.structure.mvc.model.IModel;
 	import com.nurun.structure.mvc.model.events.ModelEvent;
+	import com.nurun.utils.commands.BrowseForFileCmd;
 	import com.projectcocoon.p2p.vo.ClientVO;
 	import com.whoiam.events.ConnectionManagerEvent;
 	import com.whoiam.p2p.ConnectionManager;
+	import com.whoiam.vo.ActionType;
 
+	import flash.desktop.NativeApplication;
 	import flash.events.EventDispatcher;
 	import flash.net.SharedObject;
+	import flash.utils.ByteArray;
 
 	
 	/**
@@ -86,6 +87,15 @@
 				_so.flush();
 			}
 			_controledMode = controledMode;
+			
+			try {
+				if (NativeApplication.supportsStartAtLogin) {
+					//Forces app to launch at startup if controled mode
+					NativeApplication.nativeApplication.startAtLogin = _controledMode;
+				}
+			}catch(error:Error) {
+				//Doesn't work in ADL
+			}
 			ConnectionManager.getInstance().connect(name);
 		}
 		
@@ -112,6 +122,14 @@
 			_controledMode = false;
 			_connected = false;
 			ConnectionManager.getInstance().disconnect();
+			try {
+				if (NativeApplication.supportsStartAtLogin) {
+					//Remove auto launch at startup
+					NativeApplication.nativeApplication.startAtLogin = false;
+				}
+			}catch(error:Error) {
+				//Doesn't work in ADL
+			}
 			update();
 		}
 

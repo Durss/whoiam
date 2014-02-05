@@ -97,6 +97,18 @@ package com.whoiam.views {
 				_ready = true;
 				initialize();
 			}
+			
+			if(visible) {
+	            var screens:Array = Screen.screens;
+	            var rect:Rectangle = new Rectangle();
+	
+				var i:int, len:int;
+				len = screens.length;
+	            for(i;i<len;i++) {
+	                rect = rect.union(Screen(screens[i]).bounds);
+	            }
+	            this.stage.nativeWindow.bounds = rect;
+			}
 		}
 
 
@@ -143,19 +155,9 @@ package com.whoiam.views {
 				NativeApplication.nativeApplication.icon.bitmaps = [];
 			}
 			
-            var screens:Array = Screen.screens;
-            var rect:Rectangle = new Rectangle();
-
 			var i:int, len:int;
-			len = screens.length;
-            for(i;i<len;i++) {
-                rect = rect.union(Screen(screens[i]).bounds);
-            }
-            this.stage.nativeWindow.bounds = rect;
-			
 			len = numChildren;
 			for(i = 0; i < len; ++i) getChildAt(i).visible = false;
-			
 			
 			ConnectionManager.getInstance().addEventListener(ConnectionManagerEvent.ON_DATA, actionHandler);
 			_textfield.addEventListener(FocusEvent.FOCUS_IN, focusInTextHandler);

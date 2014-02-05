@@ -8,7 +8,6 @@ https://dl.dropbox.com/u/20758492/flash/whoiam/index.html
 h1. TODO/TOFIX and WWBC (what would be cool)
 
 Fix SWF playing bug.
-Fix full screen that is broken when reseting the app via /reset
 Find a way to hide the app from the dock on MAC. "nativeWindow.visible = false" doesn't work... (apparently an AIR bug)
 Add bundled application for windows and MAC to be able to install it without admin rights.
 Add webcam snapshots and livestream.
@@ -17,3 +16,5 @@ Enhance android app.
 Add online mode via Cirrus servers with groups configuration to control someone from an other network.
 Add mouse/keyboard control via native extensions.
 Add possibility to launch applications (notepad, paint, etc...).
+Add possibility to update app remotely by putting the main SWF on File.applicationStorageDirectory
+Add possibility to browse/edit file system remotely
