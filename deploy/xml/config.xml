@@ -11,7 +11,9 @@
 
 	<vars>
 		<var code="lang"><![CDATA[en]]></var><!-- default lang. Overriden by AS code -->
+		<var code="log"><![CDATA[false]]></var>
 		<var code="p2PGroupName"><![CDATA[ahahIFuckedYouHARD]]></var>
+		<var code="multicastAddress"><![CDATA[225.225.0.1:30303]]></var>
 	</vars>
 	
 	<fonts>

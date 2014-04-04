@@ -5,7 +5,9 @@
 <stringAttribute key="ARGUMENTS" value="-static-link-runtime-shared-libraries=true&#10;-target-player={playerVersion}&#10;-library-path+=&quot;{flexSDK}/frameworks/locale/en_US&quot;&#10;-default-size=550,400"/>
 <booleanAttribute key="CUSTOMIZE_ADL_ARGS" value="false"/>
 <stringAttribute key="CUSTOM_ADL_CMD_LINE" value="${nodebug} ${profile} ${screensize} ${anesdir} ${desc} ${rootdir}"/>
+<intAttribute key="DEBUG_VIA" value="0"/>
 <booleanAttribute key="DISABLE_COMPILE_PROCESS" value="false"/>
+<booleanAttribute key="INSTALL_APPLICATION" value="true"/>
 <stringAttribute key="LAUNCHER_DEPENDENCIES" value="[Self]"/>
 <intAttribute key="LAUNCH_METHOD" value="0"/>
 <stringAttribute key="MAIN_CLASS" value="sources/classes/com/whoiam/Application.as"/>

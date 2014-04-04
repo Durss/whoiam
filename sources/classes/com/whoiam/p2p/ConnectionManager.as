@@ -1,4 +1,5 @@
 package com.whoiam.p2p {
+	import com.whoiam.utils.Logger;
 	import com.nurun.structure.environnement.configuration.Config;
 	import com.nurun.utils.math.MathUtils;
 	import com.projectcocoon.p2p.LocalNetworkDiscovery;
@@ -87,10 +88,11 @@ package com.whoiam.p2p {
 		 * Initialize the class.
 		 */
 		public function connect(name:String = null):void {
-			_connection = new LocalNetworkDiscovery();
-			_connection.autoConnect = true;
-			_connection.groupName = Config.getVariable("p2PGroupName");
-			_connection.clientName = (name != null)? name : "CONTROLER_"+(MathUtils.randomNumberFromRange(1000000, 9999999, Math.round));
+			_connection						= new LocalNetworkDiscovery();
+			_connection.autoConnect			= true;
+			_connection.groupName			= Config.getVariable("p2PGroupName");
+			_connection.multicastAddress	= Config.getVariable("multicastAddress");
+			_connection.clientName			= (name != null)? name : "CONTROLER_"+(MathUtils.randomNumberFromRange(1000000, 9999999, Math.round));
 			_connection.addEventListener(ClientEvent.CLIENT_ADDED, clientAddedHandler);
 			_connection.addEventListener(ClientEvent.CLIENT_UPDATE, clientUpdateHandler);
 			_connection.addEventListener(ClientEvent.CLIENT_REMOVED, clientRemovedHandler);
@@ -186,6 +188,8 @@ package com.whoiam.p2p {
 		 * Called when connection starts
 		 */
 		private function connectHandler(data:Object):void {
+			Logger.getInstance().log("ConnectionManager.connectHandler");
+			Logger.getInstance().log('_connection.spec: ' + (_connection.spec));
 			dispatchEvent(new ConnectionManagerEvent(ConnectionManagerEvent.ON_CONNECT, null, data));
 		}
 		
@@ -194,6 +198,8 @@ package com.whoiam.p2p {
 		 */
 		private function clientAddedHandler(event:ClientEvent):void {
 			var id:String = event.client.groupID;
+			Logger.getInstance().log("ConnectionManager.clientAddedHandler : " + id);
+			Logger.getInstance().log('group: ' + (event.group));
 			dispatchEvent(new ConnectionManagerEvent(ConnectionManagerEvent.ON_USER_CONNECT, null, id, id));
 		}
 		
@@ -202,6 +208,7 @@ package com.whoiam.p2p {
 		 */
 		private function clientUpdateHandler(event:ClientEvent):void {
 			var id:String = event.client.groupID;
+			Logger.getInstance().log("ConnectionManager.clientUpdateHandler : " + id);
 			if(event.client == null || /^CONTROLER_.*/.test(event.client.clientName) ) return;
 			dispatchEvent(new ConnectionManagerEvent(ConnectionManagerEvent.ON_USER_UPDATE, null, event.client, id));
 		}
@@ -211,6 +218,7 @@ package com.whoiam.p2p {
 		 */
 		private function clientRemovedHandler(event:ClientEvent):void {
 			var id:String = event.client.groupID;
+			Logger.getInstance().log("ConnectionManager.clientRemovedHandler : "+id);
 			dispatchEvent(new ConnectionManagerEvent(ConnectionManagerEvent.ON_USER_DISCONNECT, null, id, id));
 		}
 		
@@ -220,6 +228,7 @@ package com.whoiam.p2p {
 		private function dataReceivedHandler(event:MessageEvent):void {
 			var peerId:String = event.message.client.groupID;
 			var data:Object = event.message.data;
+			Logger.getInstance().log("ConnectionManager.dataReceivedHandler : "+data);
 			dispatchEvent(new ConnectionManagerEvent(ConnectionManagerEvent.ON_DATA, data["a"], data["d"], peerId));
 		}
 		
