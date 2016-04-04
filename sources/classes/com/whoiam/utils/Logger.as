@@ -55,7 +55,9 @@ package com.whoiam.utils {
 				var fileStream : FileStream = new FileStream ();
 			    fileStream.open (_file, FileMode.APPEND);
 			    fileStream.writeMultiByte (value + "\r\n", File.systemCharset);
-			    fileStream.close ();
+			    fileStream.close();
+			}else{
+				trace(value);
 			}
 		}
 		

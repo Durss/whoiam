@@ -101,6 +101,7 @@ package com.whoiam.p2p {
 			_connection.addEventListener(ObjectEvent.OBJECT_ANNOUNCED, objectAnnouncedHandler);
 			_connection.addEventListener(GroupEvent.GROUP_CONNECTED, connectHandler);
 			NativeApplication.nativeApplication.addEventListener(Event.NETWORK_CHANGE, networkConnectivityChangeHandler);
+			Logger.getInstance().log('I am : ' + _connection.clientName);
 		}
 		
 		/**
@@ -199,8 +200,10 @@ package com.whoiam.p2p {
 		private function clientAddedHandler(event:ClientEvent):void {
 			var id:String = event.client.groupID;
 			Logger.getInstance().log("ConnectionManager.clientAddedHandler : " + id);
-			Logger.getInstance().log('group: ' + (event.group));
-			dispatchEvent(new ConnectionManagerEvent(ConnectionManagerEvent.ON_USER_CONNECT, null, id, id));
+			Logger.getInstance().log('group: ' + (event.group.estimatedMemberCount));
+			Logger.getInstance().log('name : ' + (event.client.clientName));
+			dispatchEvent(new ConnectionManagerEvent(ConnectionManagerEvent.ON_USER_CONNECT, null, event.client, id));
+//			dispatchEvent(new ConnectionManagerEvent(ConnectionManagerEvent.ON_USER_UPDATE, null, event.client, id));
 		}
 		
 		/**
@@ -209,6 +212,8 @@ package com.whoiam.p2p {
 		private function clientUpdateHandler(event:ClientEvent):void {
 			var id:String = event.client.groupID;
 			Logger.getInstance().log("ConnectionManager.clientUpdateHandler : " + id);
+			Logger.getInstance().log('group: ' + (event.group.estimatedMemberCount));
+			Logger.getInstance().log('name : ' + (event.client.clientName));
 			if(event.client == null || /^CONTROLER_.*/.test(event.client.clientName) ) return;
 			dispatchEvent(new ConnectionManagerEvent(ConnectionManagerEvent.ON_USER_UPDATE, null, event.client, id));
 		}

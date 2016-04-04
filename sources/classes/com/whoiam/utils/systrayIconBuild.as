@@ -21,7 +21,7 @@ package com.whoiam.utils {
 			var fs:FileStream = new FileStream();
 			var loader:Loader = new Loader();
 		    var sysTrayIcon:SystemTrayIcon = NativeApplication.nativeApplication.icon as SystemTrayIcon;
-			loader.contentLoaderInfo.addEventListener(Event.COMPLETE, function(event:Event) {
+			loader.contentLoaderInfo.addEventListener(Event.COMPLETE, function(event:Event):void {
 				var bmd:BitmapData = Bitmap(LoaderInfo(event.target).loader.content).bitmapData;
 				bmd = BitmapUtils.resampleBitmapData(bmd, 16/36);
 				NativeApplication.nativeApplication.icon.bitmaps = [bmd];
@@ -29,7 +29,7 @@ package com.whoiam.utils {
 				var ns:Namespace = descriptor.namespace();
 //				var name:String = descriptor.ns::filename[0];
 			    sysTrayIcon.tooltip = "Whoiam";//+name;
-			    sysTrayIcon.addEventListener(MouseEvent.CLICK, function(event:Event) {
+			    sysTrayIcon.addEventListener(MouseEvent.CLICK, function(event:Event):void {
 					stage.nativeWindow.activate();
 					stage.nativeWindow.orderToFront();
 					stage.nativeWindow.alwaysInFront = true;

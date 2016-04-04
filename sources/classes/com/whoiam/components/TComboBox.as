@@ -116,7 +116,7 @@ package com.whoiam.components {
 		}
 
 		private function setLabel(label:String):void {
-			if(label.length > 20) label = label.substr(0, 20)+"…";
+			if(label != null && label.length > 20) label = label.substr(0, 20)+"…";
 			TButton(_button).label = label;
 		}
 		
