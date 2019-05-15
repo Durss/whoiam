@@ -1,8 +1,8 @@
 h1. Details
 
-This AIR application is aimed to troll your workmates by sending shits distantly to their computer.
+This AIR application is aimed to troll your workmates by sending shits remotely to their computer.
 Get more details about this app here :
-https://dl.dropbox.com/u/20758492/flash/whoiam/index.html
+http://durss.ninja/project/whoiam
 
 
 h1. TODO/TOFIX and WWBC (what would be cool)
